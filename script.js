@@ -84,3 +84,46 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 updateScrollProgress();
+
+const worksTabs = Array.from(document.querySelectorAll('.works-tab'));
+const worksPanels = Array.from(document.querySelectorAll('.works-panel'));
+
+const activateWorksTab = (tab, moveFocus = false) => {
+  const panelId = tab.getAttribute('aria-controls');
+
+  worksTabs.forEach((item) => {
+    const active = item === tab;
+    item.classList.toggle('is-active', active);
+    item.setAttribute('aria-selected', String(active));
+    item.tabIndex = active ? 0 : -1;
+  });
+
+  worksPanels.forEach((panel) => {
+    panel.hidden = panel.id !== panelId;
+  });
+
+  if (moveFocus) tab.focus();
+};
+
+const requestedWorksCategory = new URLSearchParams(window.location.search).get('category');
+const requestedWorksTab = document.getElementById(`works-tab-${requestedWorksCategory}`);
+
+if (requestedWorksTab && worksTabs.includes(requestedWorksTab)) {
+  activateWorksTab(requestedWorksTab);
+}
+
+worksTabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => activateWorksTab(tab));
+  tab.addEventListener('keydown', (event) => {
+    let nextIndex = index;
+
+    if (event.key === 'ArrowRight') nextIndex = (index + 1) % worksTabs.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + worksTabs.length) % worksTabs.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = worksTabs.length - 1;
+    else return;
+
+    event.preventDefault();
+    activateWorksTab(worksTabs[nextIndex], true);
+  });
+});

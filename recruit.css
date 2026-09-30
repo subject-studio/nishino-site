@@ -50,15 +50,21 @@
 
 .recruit-requirements{position:relative;overflow:hidden;padding:96px 0 104px}
 .recruit-requirements>.section-number{right:5%;top:12px}
-.requirements-table{max-width:1060px;margin:60px auto 0;border-top:1px solid rgba(202,149,34,.65)}
+.requirements-job{max-width:1060px;margin:60px auto 0}
+.requirements-job+.requirements-job{margin-top:84px}
+.requirements-job-heading{display:flex;align-items:flex-end;gap:24px;padding-bottom:16px;border-bottom:2px solid var(--gold)}
+.requirements-job-heading p{margin:0 0 6px;color:var(--gold);font:11px var(--mono);letter-spacing:.16em}
+.requirements-job-heading h3{margin:0;font-family:var(--serif);font-size:34px;letter-spacing:.12em}
+.requirements-table{max-width:1060px;margin:24px auto 0;border-top:1px solid rgba(202,149,34,.65)}
 .requirements-table dl{margin:0}
 .requirements-table dl>div{display:grid;grid-template-columns:250px 1fr;border-bottom:1px solid rgba(21,21,21,.2)}
 .requirements-table dt,.requirements-table dd{margin:0;padding:22px 30px;font-size:14px;line-height:1.9;letter-spacing:.07em}
 .requirements-table dt{display:flex;align-items:center;font-family:var(--serif);font-weight:700;background:rgba(202,149,34,.1);border-right:1px solid rgba(21,21,21,.16)}
 .requirements-table dd strong{font-family:var(--serif);font-size:18px}
+.requirements-table dd strong+small+strong{display:block;margin-top:12px}
 .requirements-table dd small{display:block;font-size:11px;color:#666}
-.requirements-table ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 20px;margin:0;padding:0;list-style:none}
-.requirements-table li:before{content:"—";color:var(--gold);margin-right:8px}
+.requirements-table ul{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin:0;padding:0;list-style:none}
+.requirements-table li{margin:0;padding:0}
 
 .recruit-contact{position:relative;overflow:hidden;background:var(--gold);color:var(--black);padding:32px 0 40px}
 .recruit-contact>.section-number{left:4%;top:18px}
@@ -131,15 +137,18 @@
   .recruit-point-copy>p:last-child{font-size:11px}
 
   .recruit-requirements{padding:66px 0 72px}
-  .requirements-table{margin-top:42px}
+  .requirements-job{margin-top:42px}
+  .requirements-job+.requirements-job{margin-top:60px}
+  .requirements-job-heading{display:block;padding:0 8px 12px}
+  .requirements-job-heading p{margin-bottom:6px;font-size:9px}
+  .requirements-job-heading h3{font-size:26px}
+  .requirements-table{margin-top:18px}
   .requirements-table dl>div{display:block}
   .requirements-table dt,.requirements-table dd{padding:12px 15px}
   .requirements-table dt{border-right:0;font-size:11px}
   .requirements-table dd{font-size:12px}
   .requirements-table dd strong{font-size:15px}
   .requirements-table dd small{font-size:9px}
-  .requirements-table ul{grid-template-columns:1fr}
-
   .recruit-contact{padding:36px 0 46px}
   .recruit-contact-inner{display:flex;flex-direction:column;align-items:stretch}
   .recruit-contact-copy{margin-bottom:24px}

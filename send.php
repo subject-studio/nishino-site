@@ -21,7 +21,7 @@ function render_error(string $message, int $status = 400): void
     $safeMessage = htmlspecialchars($message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     echo '<!doctype html><html lang="ja"><head><meta charset="utf-8">';
     echo '<meta name="viewport" content="width=device-width,initial-scale=1">';
-    echo '<title>送信エラー | 株式会社西野工業</title>';
+    echo '<title>送信エラー | 西野工業</title>';
     echo '<link rel="stylesheet" href="styles.css?v=20260730-13">';
     echo '<link rel="stylesheet" href="legal.css?v=20260730-1">';
     echo '</head><body class="legal-page"><main class="status-page">';
@@ -64,6 +64,7 @@ $message = post_value('message', 3000);
 $consent = post_value('consent', 2);
 $inquiryType = post_value('inquiry_type', 80);
 $experience = post_value('experience', 40);
+$position = post_value('position', 40);
 
 if ($name === '' || $furigana === '' || $email === '') {
     render_error('必須項目を入力してください。');
@@ -84,6 +85,13 @@ if ($formType === 'contact' && !in_array($inquiryType, [
 
 if ($formType === 'recruit' && $tel === '') {
     render_error('電話番号を入力してください。');
+}
+
+if ($formType === 'recruit' && !in_array($position, [
+    '鉄筋工',
+    'トラック運転手',
+], true)) {
+    render_error('希望職種を選択してください。');
 }
 
 if ($formType === 'recruit' && !in_array($experience, [
@@ -125,6 +133,7 @@ if ($formType === 'contact') {
         'フリガナ' => $furigana,
         '電話番号' => $tel,
         'メールアドレス' => $email,
+        '希望職種' => $position,
         '業界経験' => $experience,
         'ご質問・ご相談内容' => $message,
     ];

@@ -31,9 +31,10 @@ html{scroll-padding-top:112px}
 .service-card h3:after{content:"";display:block;width:38px;height:2px;background:var(--gold);margin:14px auto 0}
 .service-card:before{content:"0" counter(service-card);counter-increment:service-card;display:block;font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 8px}
 .service-grid{counter-reset:service-card}
+.service-card:first-child .service-image img{filter:grayscale(1) brightness(1.02) contrast(.9)}
 .works-panel .panel-bg{background:#151515}
-.works-photo{position:absolute;right:0;top:0;width:52%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.65}
-.works-panel:after{background:linear-gradient(90deg,rgba(21,21,21,.94) 0%,rgba(21,21,21,.72) 47%,rgba(21,21,21,.12) 100%)}
+.works-photo{position:absolute;right:-2%;top:-2%;width:56%;height:104%;object-fit:cover;filter:grayscale(1) blur(3px) contrast(1.05);opacity:.34;transform:scale(1.03)}
+.works-panel:after{background:linear-gradient(90deg,rgba(21,21,21,.98) 0%,rgba(21,21,21,.88) 48%,rgba(21,21,21,.38) 100%)}
 .contact-dog{height:137%;right:-4%;bottom:-27%}
 .footer-brand .brand-mark{width:90px;height:78px}
 .socials a{width:54px;height:54px;background:var(--gold);border-radius:50%;padding:11px}
@@ -72,8 +73,8 @@ html{scroll-padding-top:112px}
   .about-worker{left:0;width:60%}
   .about-truck{right:0;width:60%}
   .service-image{height:200px}
-  .works-photo{width:55%;opacity:.55}
-  .works-panel:after{background:linear-gradient(90deg,rgba(21,21,21,.95) 0%,rgba(21,21,21,.74) 54%,rgba(21,21,21,.22) 100%)}
+  .works-photo{width:59%;opacity:.3}
+  .works-panel:after{background:linear-gradient(90deg,rgba(21,21,21,.98) 0%,rgba(21,21,21,.9) 54%,rgba(21,21,21,.46) 100%)}
   .contact{min-height:440px}
   .contact-inner{min-height:440px;display:flex;align-items:center;padding:32px 0 116px}
   .contact-copy{width:100%}
@@ -371,4 +372,59 @@ body{animation:site-soft-in 1.15s ease both}
 
 @media (max-width:760px){
   .menu-toggle{display:flex!important;flex:0 0 48px;width:48px;height:48px;margin-left:auto;padding:0;align-items:center;justify-content:center}
+}
+
+/* Four service cards on the home page. */
+@media (min-width:1101px){
+  .service-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;max-width:1400px}
+  .service-card:not(:last-child):after{right:-17px}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .service-card:last-child{grid-column:auto;width:auto;justify-self:stretch}
+}
+
+/* Footer contact link. */
+.footer-contact-button{flex:0 0 auto;min-width:280px;height:60px;padding:0 26px;display:inline-flex;align-items:center;justify-content:center;gap:14px;border:1px solid #fff;background:transparent;color:#fff;font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:.1em;transition:background .25s ease,color .25s ease,transform .25s ease}
+.footer-contact-icon{width:30px;height:30px;display:inline-grid;place-items:center;flex:0 0 30px;border:1px solid currentColor;border-radius:50%;font:16px/1 var(--sans);transition:transform .25s ease}
+.footer-contact-button:hover{background:#fff;color:var(--black);transform:translateY(-2px)}
+.footer-contact-button:hover .footer-contact-icon{transform:translateX(3px)}
+.footer-contact-button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@media (min-width:761px) and (max-width:1100px){
+  .footer-contact-button{justify-self:start}
+  .footer-main .socials{grid-column:auto;justify-self:end;justify-content:flex-end}
+}
+@media (max-width:760px){
+  .footer-contact-button{width:100%;min-width:0;max-width:240px;height:52px;padding:0 14px;justify-self:start;font-size:12px}
+  .footer-contact-icon{width:26px;height:26px;flex-basis:26px;font-size:14px}
+}
+
+/* Header/footer sizing and home-page spacing refinements. */
+.brand-copy strong{font-size:17px}
+.contact-dog{right:calc((100vw - 100%)/-2)}
+@media (min-width:1101px){
+  .service{height:830px}
+  .center-action{margin-top:54px}
+}
+@media (min-width:761px) and (max-width:1180px){
+  .brand-copy strong{font-size:16px}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .footer-contact-button{justify-self:end}
+  .footer-main .socials{justify-self:start;justify-content:flex-start}
+  .center-action{margin-top:50px}
+}
+@media (max-width:760px){
+  .brand-copy strong{font-size:13px}
+  .footer-main{grid-template-columns:auto minmax(0,1fr);column-gap:12px}
+  .footer-main .socials{justify-self:start;justify-content:flex-start}
+  .footer-contact-button{width:auto;min-width:180px;padding:0 8px;gap:9px;justify-self:end;font-size:10px}
+  .center-action{margin-top:44px}
+}
+
+/* Compact, centered footer on phones. */
+@media (max-width:760px){
+  .footer-main{min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:32px 0}
+  .footer-brand{flex:none;width:auto;justify-content:center}
+  .footer-main .socials{align-self:center;justify-self:auto;justify-content:center}
+  .footer-contact-button{display:none}
 }
