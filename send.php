@@ -53,7 +53,7 @@ if (!in_array($formType, ['contact', 'recruit'], true)) {
 
 // Bot submissions fill this hidden field. Return success without sending.
 if (post_value('website', 200) !== '') {
-    redirect_to('thanks.html');
+    redirect_to('/thanks');
 }
 
 $name = post_value('name', 80);
@@ -168,4 +168,4 @@ if (!$sent) {
     render_error('メール送信に失敗しました。時間をおいて再度お試しいただくか、お電話でお問い合わせください。', 500);
 }
 
-redirect_to('thanks.html?type=' . rawurlencode($formType));
+redirect_to('/thanks?type=' . rawurlencode($formType));

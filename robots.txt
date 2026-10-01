@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /send.php
-Disallow: /thanks.html
+Disallow: /thanks
 
 Sitemap: https://nishino-kogyo.com/sitemap.xml
