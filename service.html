@@ -25,8 +25,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;700;900&family=Roboto+Mono:wght@500;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261001-3">
-  <link rel="stylesheet" href="service.css?v=20261001-2">
+  <link rel="stylesheet" href="styles.css?v=20261007-3">
+  <link rel="stylesheet" href="service.css?v=20261007-1">
 </head>
 <body class="service-page">
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -38,7 +38,13 @@
     <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav" aria-label="メインナビゲーション">
       <a class="menu-home" href="/" aria-label="TOPページへ戻る"><img src="assets/logo.webp" alt="西野工業ロゴ"><span>TOP PAGE</span></a>
-      <a href="/about"><b>ABOUT</b><small>会社概要</small></a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu"><b>ABOUT</b><small>会社情報</small></button>
+        <div class="nav-submenu" id="about-submenu" hidden>
+          <a href="/about">会社情報</a>
+          <a href="/messege">社長メッセージ</a>
+        </div>
+      </div>
       <a class="is-current" href="/service"><b>SERVICE</b><small>事業内容</small></a>
       <a href="/works"><b>WORKS</b><small>施工実績</small></a>
       <a href="/recruit"><b>RECRUIT</b><small>採用情報</small></a>
@@ -72,23 +78,23 @@
         <div class="service-list">
           <article class="service-detail reveal">
             <div class="service-detail-number">01</div>
-            <div class="service-detail-media"><img src="assets/steel_up_mono.webp" alt="精密に組み上げられた鉄筋" loading="lazy" decoding="async"><span class="service-detail-caption">REBAR WORK</span></div>
+            <div class="service-detail-media"><img src="assets/steel.webp" alt="精密に組み上げられた鉄筋" loading="lazy" decoding="async"><span class="service-detail-caption">REBAR WORK</span></div>
             <div class="service-detail-copy"><p class="service-detail-kicker">MAIN SERVICE</p><h3>鉄筋工事</h3><p>建物の骨格となる鉄筋を、図面に沿って正確に組み立てます。豊富な現場経験を活かし、品質と安全を両立した施工を行います。</p><ul><li>マンション・ビル・工場</li><li>公共施設・商業施設</li></ul><a class="service-detail-more" href="/works?category=rebar#works-list">VIEW MORE<span aria-hidden="true">→</span></a></div>
           </article>
           <article class="service-detail service-detail-reverse reveal">
             <div class="service-detail-number">02</div>
-            <div class="service-detail-media"><img src="assets/track_steel_mono.webp" alt="加工した鉄筋資材を運搬するトラック" loading="lazy" decoding="async"><span class="service-detail-caption">PROCESSING &amp; DELIVERY</span></div>
+            <div class="service-detail-media"><img src="assets/track_steel.webp" alt="加工した鉄筋資材を運搬するトラック" loading="lazy" decoding="async"><span class="service-detail-caption">PROCESSING &amp; DELIVERY</span></div>
             <div class="service-detail-copy"><p class="service-detail-kicker">ONE-STOP SUPPORT</p><h3>鉄筋加工・運搬</h3><p>必要な鉄筋を現場に合わせて加工し、適切なタイミングでお届けします。施工の流れを止めない段取りで、現場の負担を軽減します。</p><ul><li>鉄筋の加工・積み込み</li><li>現場への搬入・納品</li></ul></div>
           </article>
           <article class="service-detail reveal">
             <div class="service-detail-number">03</div>
-            <div class="service-detail-media"><img src="assets/interior.webp" alt="内装管理を行う室内" loading="lazy" decoding="async"><span class="service-detail-caption">INTERIOR MANAGEMENT</span></div>
+            <div class="service-detail-media"><img src="assets/interior_color.webp" alt="内装管理を行う室内" loading="lazy" decoding="async"><span class="service-detail-caption">INTERIOR MANAGEMENT</span></div>
             <div class="service-detail-copy"><p class="service-detail-kicker">QUALITY CONTROL</p><h3>内装管理</h3><p>内装工事における工程・品質・安全を一元的に管理します。各業者と連携し、仕上がりと進捗を確認しながら、円滑な現場運営を支えます。</p><ul><li>工程・品質・安全管理</li><li>協力業者との調整</li></ul><a class="service-detail-more" href="/works?category=interior#works-list">VIEW MORE<span aria-hidden="true">→</span></a></div>
           </article>
           <article class="service-detail service-detail-reverse reveal">
             <div class="service-detail-number">04</div>
-            <div class="service-detail-media"><img src="assets/design.webp" alt="Webサイトのデザイン制作画面" loading="lazy" decoding="async"><span class="service-detail-caption">DESIGN PRODUCTION</span></div>
-            <div class="service-detail-copy"><p class="service-detail-kicker">CREATIVE SUPPORT</p><h3>デザイン制作業</h3><p>お客様の事業やサービスが持つ魅力を整理し、目的やご要望に合わせたデザインをご提案します。見た目の美しさだけでなく、情報が分かりやすく伝わる設計を大切にしています。</p><ul><li>Webサイト制作</li><li>各種デザイン制作</li></ul></div>
+            <div class="service-detail-media"><img src="assets/design_color.webp" alt="Webサイトのデザイン制作画面" loading="lazy" decoding="async"><span class="service-detail-caption">DESIGN PRODUCTION</span></div>
+            <div class="service-detail-copy"><p class="service-detail-kicker">CREATIVE SUPPORT</p><h3>デザイン制作・改修</h3><p>お客様の事業やサービスが持つ魅力を整理し、目的やご要望に合わせたデザインをご提案します。見た目の美しさだけでなく、情報が分かりやすく伝わる設計を大切にしています。</p><ul><li>Webサイト制作</li><li>各種デザイン制作</li></ul></div>
           </article>
         </div>
       </div>
@@ -108,6 +114,6 @@
     </div>
     <div class="copyright"><span>© NISHINO KOGYO CO.INC</span><a href="/privacy">PRIVACY POLICY</a></div>
   </footer>
-  <script src="script.js?v=20260730-3"></script>
+  <script src="script.js?v=20261007-1"></script>
 </body>
 </html>

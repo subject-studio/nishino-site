@@ -36,7 +36,7 @@
 .recruit-point-card{border:1px solid rgba(202,149,34,.42);background:#1b1b1b}
 .recruit-point-image{height:250px;position:relative;overflow:hidden}
 .recruit-point-image:after{content:"";position:absolute;inset:12px;border:1px solid rgba(202,149,34,.55)}
-.recruit-point-image img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.16);transition:transform .6s ease}
+.recruit-point-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .recruit-point-card:hover .recruit-point-image img{transform:scale(1.04)}
 .recruit-point-image>span{position:absolute;right:27px;bottom:20px;z-index:1;font:12px var(--mono);letter-spacing:.15em;color:#fff;text-shadow:0 1px 5px #000}
 .recruit-point-card:nth-child(1) .recruit-point-image img{object-position:55% center}

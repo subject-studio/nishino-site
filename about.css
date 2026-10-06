@@ -31,19 +31,19 @@
 .philosophy-photo:after{content:"";position:absolute;inset:14px;border:1px solid rgba(202,149,34,.72)}
 .philosophy-photo figcaption{position:absolute;left:42px;bottom:26px;z-index:1;color:#fff;font:10px var(--mono);letter-spacing:.16em;text-shadow:0 2px 5px #000}
 
-.president-message{position:relative;overflow:hidden;padding:106px 0}
-.president-message>.section-number{left:4%;top:22px}
-.president-message-inner{display:grid;grid-template-columns:42% 1fr;gap:8%;align-items:center}
-.president-photo{height:700px;position:relative;margin:0;overflow:hidden}
-.president-photo img{width:100%;height:100%;object-fit:contain;object-position:center}
-.president-photo:after{content:"";position:absolute;inset:40px 10% 28px;border:1px solid rgba(202,149,34,.5);clip-path:polygon(19% 0,100% 0,81% 100%,0 100%)}
-.president-photo figcaption{position:absolute;right:9%;bottom:8px;font:10px var(--mono);letter-spacing:.2em;color:var(--gold)}
-.president-copy{position:relative;z-index:1;max-width:700px}
-.president-copy h2{font-family:var(--serif);font-size:46px;letter-spacing:.15em;margin:0 0 40px}
-.president-text p{font-family:var(--serif);font-size:14px;line-height:2.15;letter-spacing:.08em;margin:0 0 18px}
-.president-name{display:flex;justify-content:flex-end;align-items:baseline;gap:18px;margin:36px 0 0;font-family:var(--serif)}
-.president-name span{font-size:12px;letter-spacing:.12em}
-.president-name strong{font-size:24px;letter-spacing:.2em;font-weight:500}
+.about-message{position:relative;isolation:isolate;overflow:hidden;padding:92px 0 100px;border-block:1px solid rgba(202,149,34,.45)}
+.about-message:before{content:"";position:absolute;z-index:-1;top:-20%;right:14%;width:1px;height:140%;background:linear-gradient(180deg,transparent,var(--gold) 25%,var(--gold) 75%,transparent);transform:skew(-22deg);opacity:.25;pointer-events:none}
+.about-message>.section-number{left:5%;bottom:16px}
+.about-message-inner{position:relative;max-width:1220px;margin:0 auto;display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);gap:6%;align-items:start;padding-left:38px}
+.about-message .about-section-heading{padding-top:8px}
+.about-message .about-section-heading h2{font-size:clamp(30px,3vw,46px);letter-spacing:.1em}
+.about-message-copy{min-width:0}
+.about-message-lead{font-family:var(--serif);font-size:clamp(28px,2.6vw,40px);font-weight:700;line-height:1.7;letter-spacing:.08em;margin:0 0 24px;color:#e9c879}
+.about-message-description{font-family:var(--serif);font-size:14px;line-height:2.1;letter-spacing:.06em;margin:0 0 26px;color:#ddd;line-break:strict}
+.about-message-name{display:flex;align-items:center;gap:18px;font-family:var(--serif);font-size:23px;letter-spacing:.16em;margin:0 0 32px}
+.about-message-name span{font-size:12px;letter-spacing:.1em;color:#ddd}
+.about-message-link{gap:24px;min-height:54px;height:auto;padding:14px 24px;letter-spacing:.08em}
+.about-message-link:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
 
 .company-profile{position:relative;overflow:hidden;padding:96px 0 82px}
 .company-profile>.section-number{right:5%;top:10px}
@@ -72,9 +72,7 @@
   .about-philosophy .about-section-heading{padding-left:18px}
   .philosophy-content{grid-template-columns:minmax(0,54%) minmax(0,41%);gap:5%}
   .philosophy-copy{padding-left:18px}
-  .president-message-inner{grid-template-columns:40% 1fr;gap:5%}
-  .president-photo{height:610px}
-  .president-text p{font-size:12px}
+  .about-message-inner{padding-left:18px}
 }
 
 @media (max-width:760px){
@@ -103,16 +101,16 @@
   .philosophy-photo{width:calc(100% + 20px);height:245px;margin-left:-10px}
   .philosophy-photo figcaption{left:27px;bottom:20px;font-size:8px}
 
-  .president-message{padding:72px 0 78px}
-  .president-message>.section-number{font-size:140px;top:8px;left:-2%}
-  .president-message-inner{display:flex;flex-direction:column;gap:40px}
-  .president-photo{width:100%;height:360px}
-  .president-photo:after{inset:20px 12% 18px}
-  .president-copy h2{font-size:30px;margin-bottom:28px}
-  .president-text p{font-size:11px;line-height:2;letter-spacing:.04em;margin-bottom:16px}
-  .president-name{gap:12px;margin-top:28px}
-  .president-name span{font-size:10px}
-  .president-name strong{font-size:20px}
+  .about-message{padding:60px 0 68px}
+  .about-message>.section-number{font-size:140px;left:auto;right:4%;bottom:20px}
+  .about-message-inner{grid-template-columns:1fr;gap:32px;padding-left:0}
+  .about-message .about-section-heading{padding-top:0}
+  .about-message .about-section-heading h2{font-size:30px}
+  .about-message-lead{font-size:clamp(23px,6vw,32px);letter-spacing:.04em;margin-bottom:20px}
+  .about-message-description{font-size:13px;letter-spacing:.025em;margin-bottom:22px}
+  .about-message-description br{display:none}
+  .about-message-name{font-size:21px;margin-bottom:26px}
+  .about-message-link{font-size:12px;min-height:48px;padding:12px 18px;gap:20px}
 
   .company-profile{padding:66px 0 56px}
   .company-table{margin-top:42px}
@@ -134,9 +132,7 @@
 /* Mobile body-copy readability */
 @media (max-width:760px){
   .about-page-hero-copy{font-size:12px;line-height:1.95}
-  .philosophy-copy p,
-  .president-text p{font-size:13px;line-height:2}
-  .president-break{display:none}
+  .philosophy-copy p{font-size:13px;line-height:2}
   .company-table dt,
   .company-table dd,
   .company-table dd small,
@@ -148,7 +144,7 @@
   .about-page-hero h1{font-size:clamp(64px,9vw,86px)}
   .about-page-hero-shade{background:linear-gradient(90deg,rgba(21,21,21,.99),rgba(21,21,21,.88) 52%,rgba(21,21,21,.38)),linear-gradient(0deg,rgba(21,21,21,.48),transparent 52%)}
   .about-page-hero-copy{max-width:520px;font-size:14px}
-  .about-page-hero-copy,.philosophy-copy p,.president-text p{text-wrap:pretty;line-break:strict;word-break:normal}
+  .about-page-hero-copy,.philosophy-copy p{text-wrap:pretty;line-break:strict;word-break:normal}
   .about-philosophy{padding:78px 0 88px}
   .about-philosophy .about-section-heading{padding-left:0}
   .philosophy-content{grid-template-columns:1fr;gap:42px;margin-top:52px}
@@ -156,11 +152,6 @@
   .philosophy-copy h3,.philosophy-copy p{white-space:normal}
   .philosophy-copy p{max-width:650px}
   .philosophy-photo{width:min(100%,760px);height:420px;margin:0 auto}
-  .president-message{padding:82px 0}
-  .president-message-inner{grid-template-columns:1fr;gap:42px}
-  .president-photo{width:min(100%,540px);height:620px;justify-self:center}
-  .president-copy{max-width:760px;margin:0 auto}
-  .president-text p{max-width:680px;font-size:14px}
   .company-table dl>div{grid-template-columns:210px 1fr}
   .map-grid{grid-template-columns:1fr;max-width:760px;gap:32px}
   .map-frame{height:390px}

@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;700;900&family=Roboto+Mono:wght@500;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261001-5">
+  <link rel="stylesheet" href="styles.css?v=20261007-3">
 </head>
 <body class="home-page">
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -37,7 +37,13 @@
     <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav" aria-label="メインナビゲーション">
       <a class="menu-home" href="/" aria-label="TOPページへ戻る"><img src="assets/logo.webp" alt="西野工業ロゴ"><span>TOP PAGE</span></a>
-      <a href="/about"><b>ABOUT</b><small>会社概要</small></a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu"><b>ABOUT</b><small>会社情報</small></button>
+        <div class="nav-submenu" id="about-submenu" hidden>
+          <a href="/about">会社情報</a>
+          <a href="/messege">社長メッセージ</a>
+        </div>
+      </div>
       <a href="/service"><b>SERVICE</b><small>事業内容</small></a>
       <a href="/works"><b>WORKS</b><small>施工実績</small></a>
       <a href="/recruit"><b>RECRUIT</b><small>採用情報</small></a>
@@ -83,10 +89,10 @@
       <div class="container">
         <div class="section-heading reveal"><p class="eyebrow">SERVICE</p><h2 id="service-title">事業内容</h2></div>
         <div class="service-grid">
-          <article class="service-card reveal"><div class="service-image"><img src="assets/steel_mono.webp" alt="組み上げられた鉄筋" loading="lazy" decoding="async"></div><h3>鉄筋工事</h3><p>西野工業では現場で経験を積んだ<br>鉄筋のプロフェッショナルが<br>丁寧かつ迅速に組み上げていきます</p></article>
-          <article class="service-card reveal"><div class="service-image"><img src="assets/track_front_mono.webp" alt="鉄筋資材を運ぶ西野工業のトラック" loading="lazy" decoding="async"></div><h3>資材運送業</h3><p>各工事で使用する大切な資材を<br>経験豊富なドライバーが<br>安心安全に責任をもってお届けします。</p></article>
-          <article class="service-card reveal"><div class="service-image"><img src="assets/interior.webp" alt="内装管理を行う室内" loading="lazy" decoding="async"></div><h3>内装管理</h3><p>内装工事の工程・品質・安全を管理し<br>各業者との連携を図りながら<br>円滑な現場進行を支えます。</p></article>
-          <article class="service-card reveal"><div class="service-image"><img src="assets/design.webp" alt="Webサイトのデザイン制作画面" loading="lazy" decoding="async"></div><h3>デザイン制作業</h3><p>Webサイトや各種デザインを通して<br>事業やサービスの魅力が伝わる<br>効果的な表現をご提案します。</p></article>
+          <article class="service-card reveal"><div class="service-image"><img src="assets/steel.webp" alt="組み上げられた鉄筋" loading="lazy" decoding="async"></div><h3>鉄筋工事</h3><p>西野工業では現場で経験を積んだ<br>鉄筋のプロフェッショナルが<br>丁寧かつ迅速に組み上げていきます</p></article>
+          <article class="service-card reveal"><div class="service-image"><img src="assets/track_front.webp" alt="鉄筋資材を運ぶ西野工業のトラック" loading="lazy" decoding="async"></div><h3>資材運送業</h3><p>各工事で使用する大切な資材を<br>経験豊富なドライバーが<br>安心安全に責任をもってお届けします。</p></article>
+          <article class="service-card reveal"><div class="service-image"><img src="assets/interior_color.webp" alt="内装管理を行う室内" loading="lazy" decoding="async"></div><h3>内装管理</h3><p>内装工事の工程・品質・安全を管理し<br>各業者との連携を図りながら<br>円滑な現場進行を支えます。</p></article>
+          <article class="service-card reveal"><div class="service-image"><img src="assets/design_color.webp" alt="Webサイトのデザイン制作画面" loading="lazy" decoding="async"></div><h3>デザイン制作・改修</h3><p>Webサイトや各種デザインを通して<br>事業やサービスの魅力が伝わる<br>効果的な表現をご提案します。</p></article>
         </div>
         <div class="center-action"><a class="button button-gold" href="/service">VIEW MORE</a></div>
       </div>
@@ -120,6 +126,6 @@
     </div>
     <div class="copyright"><span>© NISHINO KOGYO CO.INC</span><a href="/privacy">PRIVACY POLICY</a></div>
   </footer>
-  <script src="script.js?v=20260730-3"></script>
+  <script src="script.js?v=20261007-1"></script>
 </body>
 </html>

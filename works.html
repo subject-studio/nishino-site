@@ -25,8 +25,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;700;900&family=Roboto+Mono:wght@500;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261001-3">
-  <link rel="stylesheet" href="works.css?v=20261001-3">
+  <link rel="stylesheet" href="styles.css?v=20261007-3">
+  <link rel="stylesheet" href="works.css?v=20261007-3">
 </head>
 <body class="works-page">
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -39,7 +39,13 @@
     <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav" aria-label="メインナビゲーション">
       <a class="menu-home" href="/" aria-label="TOPページへ戻る"><img src="assets/logo.webp" alt="西野工業ロゴ"><span>TOP PAGE</span></a>
-      <a href="/about"><b>ABOUT</b><small>会社概要</small></a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu"><b>ABOUT</b><small>会社情報</small></button>
+        <div class="nav-submenu" id="about-submenu" hidden>
+          <a href="/about">会社情報</a>
+          <a href="/messege">社長メッセージ</a>
+        </div>
+      </div>
       <a href="/service"><b>SERVICE</b><small>事業内容</small></a>
       <a class="is-current" href="/works"><b>WORKS</b><small>施工実績</small></a>
       <a href="/recruit"><b>RECRUIT</b><small>採用情報</small></a>
@@ -87,46 +93,99 @@
           </div>
 
           <div class="works-panel" id="works-panel-interior" role="tabpanel" aria-labelledby="works-tab-interior" hidden>
+            <section class="works-interior-intro" aria-labelledby="interior-partnership-title">
+              <figure class="works-interior-photo">
+                <img src="assets/interior_color.webp" alt="内装工事の現場で図面を確認する担当者" loading="lazy" decoding="async">
+              </figure>
+              <div class="works-interior-copy">
+                <p class="works-history-kicker">INTERIOR PARTNERSHIP</p>
+                <h3 id="interior-partnership-title">内装管理の業務提携</h3>
+                <p>令和8年より、長年の経験と豊富な施工実績を持つ「インテリアクリエイターキョウ」と業務提携。内装工事における工程・品質・安全を一元的に管理し、各業者との連携を通じて、円滑な現場進行と確かな仕上がりを実現します。</p>
+              </div>
+            </section>
             <div class="works-history">
               <section class="works-history-section" aria-labelledby="design-construction-title">
                 <p class="works-history-kicker">DESIGN &amp; CONSTRUCTION</p>
                 <h3 id="design-construction-title">主な設計及び施工物件</h3>
-                <ul class="works-history-list">
-                  <li>関東地区大型商業施設 新築・改装店舗内 飲食テナント・フードコート施工</li>
-                  <li>大手流通グループ外食事業部 各ファストフード店舗施工</li>
-                  <li>ステーキレストラン関東地区設計施工</li>
-                  <li>宅配ピザチェーン店舗 企画・設計</li>
-                  <li>沖縄県内百貨店 増床工事・紳士服フロア施工</li>
-                  <li>沖縄県内ホテル 和食レストラン設計施工</li>
-                  <li>沖縄県内リゾートホテル 意匠設計業務・内装工事全般</li>
-                  <li>愛知県内国際博覧会会場 展示施設工事</li>
-                  <li>沖縄県内ウェディング施設 2会場新築工事</li>
+                <div class="works-project-carousel" role="region" aria-label="主な設計及び施工物件のピックアップ">
+                  <ul class="works-project-grid" id="works-project-slides" aria-label="施工物件のカード">
+                    <li class="works-project-card">
+                      <figure class="works-project-photo">
+                        <img src="assets/works-foodcourt.webp" alt="テーブルと飲食カウンターが並ぶフードコートのイメージ" width="1200" height="800" loading="lazy" decoding="async">
+                        <figcaption>イメージ</figcaption>
+                      </figure>
+                      <div class="works-project-body">
+                        <span class="works-project-number" aria-hidden="true">01</span>
+                        <p class="works-project-category">飲食テナント・フードコート</p>
+                        <h4>ダイエー関東地区新店舗、改装店舗の飲食テナント、フードコート施工</h4>
+                      </div>
+                    </li>
+                    <li class="works-project-card">
+                      <figure class="works-project-photo">
+                        <img src="assets/works-fastfood.webp" alt="カウンターと客席を備えたファーストフード店のイメージ" width="1200" height="800" loading="lazy" decoding="async">
+                        <figcaption>イメージ</figcaption>
+                      </figure>
+                      <div class="works-project-body">
+                        <span class="works-project-number" aria-hidden="true">02</span>
+                        <p class="works-project-category">ファーストフード店</p>
+                        <h4>ダイエー外食事業部の各ファーストフード店施工</h4>
+                      </div>
+                    </li>
+                    <li class="works-project-card">
+                      <figure class="works-project-photo">
+                        <img src="assets/works-steakhouse.webp" alt="木目と暖かな照明を使ったステーキハウスのイメージ" width="1200" height="800" loading="lazy" decoding="async">
+                        <figcaption>イメージ</figcaption>
+                      </figure>
+                      <div class="works-project-body">
+                        <span class="works-project-number" aria-hidden="true">03</span>
+                        <p class="works-project-category">ステーキハウス</p>
+                        <h4>ステーキハウスフォルクス関東地区設計施工</h4>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="works-project-controls">
+                    <button class="works-project-arrow" type="button" data-slide-direction="-1" aria-label="前の施工物件を表示" aria-controls="works-project-slides"><span aria-hidden="true">←</span></button>
+                    <div class="works-project-pagination" aria-label="表示する施工物件を選択">
+                      <button class="works-project-dot is-active" type="button" data-slide-index="0" aria-label="施工物件1を表示" aria-controls="works-project-slides" aria-current="true"></button>
+                      <button class="works-project-dot" type="button" data-slide-index="1" aria-label="施工物件2を表示" aria-controls="works-project-slides"></button>
+                      <button class="works-project-dot" type="button" data-slide-index="2" aria-label="施工物件3を表示" aria-controls="works-project-slides"></button>
+                    </div>
+                    <button class="works-project-arrow" type="button" data-slide-direction="1" aria-label="次の施工物件を表示" aria-controls="works-project-slides"><span aria-hidden="true">→</span></button>
+                  </div>
+                  <p class="works-project-status" role="status" aria-live="polite" aria-atomic="true"><span class="works-project-current">1</span> / 3</p>
+                </div>
+                <ul class="works-history-list works-history-list-remaining">
+                  <li>シカゴピザファクトリー企画設計及び設計</li>
+                  <li>沖縄三越増床工事紳士服フロアー施工</li>
+                  <li>沖縄都ホテル和食「祇園」設計施工</li>
+                  <li>ホテル日航アリビラ意匠設計業務及び内装工事全般</li>
+                  <li>愛知万博長久手会場グローバルハウス展示工事</li>
+                  <li>ワタベウェディング「アクアグレース」「エリスリーナ」新築工事</li>
                 </ul>
               </section>
 
               <section class="works-history-section" aria-labelledby="interior-management-title">
                 <p class="works-history-kicker">INTERIOR MANAGEMENT</p>
-                <h3 id="interior-management-title">主な内装監理業務</h3>
-                <p class="works-history-note"><strong>内装監理業務とは</strong><span>ショッピングセンター及び商業施設などのテナント出店者が選任する設計者に対し、デベロッパーの意向を伝え、意匠や各種図面の確認・調整を主に行う業務です。</span></p>
+                <h3 id="interior-management-title">主な内装管理業務</h3>
+                <p class="works-history-note"><strong>※内装管理業務</strong><span>ショッピングセンター及商業施設等のテナント出店者が選任するテナント設計者に対して、<br>デベロッパーの意向を伝え意匠並びに各種図面の確認、調整を主に行う。</span></p>
                 <ul class="works-history-list works-history-list-management">
-                  <li>那覇市内大型商業施設 新築工事</li>
-                  <li>沖縄県内アウトレットモール 新築工事</li>
-                  <li>広島県内大型商業施設 新築工事</li>
-                  <li>沖縄県内免税商業施設 新築工事</li>
-                  <li>大阪府内大型商業施設 新築工事</li>
-                  <li>熊本市内商業施設 新築工事</li>
-                  <li>京都市内大型商業施設 新築工事</li>
-                  <li>福岡市内大型商業施設 新築工事</li>
-                  <li>神戸市内商業施設 活性化工事</li>
-                  <li>京都府内大型商業施設 新築工事</li>
-                  <li>滋賀県内大型商業施設 活性化工事</li>
-                  <li>京都市内大型商業施設 活性化工事</li>
-                  <li>大阪府内大型商業施設 活性化工事</li>
-                  <li>大阪府内大型商業施設 新築工事</li>
-                  <li>大阪市内商業施設 活性化工事</li>
-                  <li>大阪府内大型ホームセンター 新築工事</li>
-                  <li>福岡市内大規模複合施設 新築工事</li>
-                  <li>大阪市内複合商業施設 活性化工事</li>
+                  <li>サンエー那覇メインプレイス新築工事</li>
+                  <li>沖縄アウトレットモール「ＡＳＩＢＩＮＡ」新築工事</li>
+                  <li>ダイヤモンドシティソレイユ新築工事(広島)</li>
+                  <li>DFSギャラリア沖縄新築工事</li>
+                  <li>ダイヤモンドシティリーファ新築工事(大阪)</li>
+                  <li>ａｕｎｅKUMAMOTO新築工事(熊本)</li>
+                  <li>イオンモールＫＹＯＴＯ新築工事</li>
+                  <li>木の葉モール橋本新築工事(福岡)</li>
+                  <li>神戸ハーバーランドumie活性化工事</li>
+                  <li>イオンモール京都桂川新築工事</li>
+                  <li>イオンモール草津活性化工事(滋賀)</li>
+                  <li>イオンモールKYOTO活性化工事</li>
+                  <li>イオンモール北花田活性化工事（大阪）</li>
+                  <li>イオンモール藤井寺新築工事(大阪)</li>
+                  <li>野田阪神活性化工事(大阪)</li>
+                  <li>スーパービバホーム美原南新築工事(大阪)</li>
+                  <li>福岡大名ガーデンシティ新築工事</li>
                 </ul>
               </section>
             </div>
@@ -149,6 +208,6 @@
     </div>
     <div class="copyright"><span>© NISHINO KOGYO CO.INC</span><a href="/privacy">PRIVACY POLICY</a></div>
   </footer>
-  <script src="script.js?v=20261001-3"></script>
+  <script src="script.js?v=20261007-2"></script>
 </body>
 </html>

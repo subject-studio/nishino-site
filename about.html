@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="西野工業の企業理念、代表挨拶、会社情報、アクセスをご紹介します。">
+  <meta name="description" content="西野工業の企業理念、会社情報、アクセスをご紹介します。">
   <title>会社概要 | 西野工業</title>
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="canonical" href="https://nishino-kogyo.com/about">
@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="西野工業">
   <meta property="og:title" content="会社概要 | 西野工業">
-  <meta property="og:description" content="西野工業の企業理念、代表挨拶、会社情報、アクセスをご紹介します。">
+  <meta property="og:description" content="西野工業の企業理念、会社情報、アクセスをご紹介します。">
   <meta property="og:url" content="https://nishino-kogyo.com/about">
   <meta property="og:image" content="https://nishino-kogyo.com/assets/ogp.png">
   <meta property="og:image:type" content="image/png">
@@ -20,13 +20,13 @@
   <meta property="og:image:alt" content="西野工業のウェブサイト">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="会社概要 | 西野工業">
-  <meta name="twitter:description" content="西野工業の企業理念、代表挨拶、会社情報、アクセスをご紹介します。">
+  <meta name="twitter:description" content="西野工業の企業理念、会社情報、アクセスをご紹介します。">
   <meta name="twitter:image" content="https://nishino-kogyo.com/assets/ogp.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;700;900&family=Roboto+Mono:wght@500;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261001-3">
-  <link rel="stylesheet" href="about.css?v=20260731-3">
+  <link rel="stylesheet" href="styles.css?v=20261007-3">
+  <link rel="stylesheet" href="about.css?v=20261007-2">
 </head>
 <body class="about-page">
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -39,7 +39,13 @@
     <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="main-nav" aria-label="メインナビゲーション">
       <a class="menu-home" href="/" aria-label="TOPページへ戻る"><img src="assets/logo.webp" alt="西野工業ロゴ"><span>TOP PAGE</span></a>
-      <a class="is-current" href="/about"><b>ABOUT</b><small>会社概要</small></a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle is-current" type="button" aria-expanded="false" aria-controls="about-submenu"><b>ABOUT</b><small>会社情報</small></button>
+        <div class="nav-submenu" id="about-submenu" hidden>
+          <a class="is-current" aria-current="page" href="/about">会社情報</a>
+          <a href="/messege">社長メッセージ</a>
+        </div>
+      </div>
       <a href="/service"><b>SERVICE</b><small>事業内容</small></a>
       <a href="/works"><b>WORKS</b><small>施工実績</small></a>
       <a href="/recruit"><b>RECRUIT</b><small>採用情報</small></a>
@@ -83,24 +89,20 @@
       </div>
     </section>
 
-    <section class="president-message section-dark" id="message" aria-labelledby="message-title">
-      <div class="section-number">02</div>
-      <div class="container president-message-inner">
-        <figure class="president-photo reveal">
-          <img src="assets/about-worker.webp" alt="鉄筋工事に取り組む職人" loading="lazy" decoding="async">
-          <figcaption>NISHINO KOGYO</figcaption>
-        </figure>
-        <div class="president-copy reveal">
-          <p class="eyebrow">MESSAGE</p>
-          <h2 id="message-title">社長あいさつ</h2>
-          <div class="president-text">
-            <p>西野工業のホームページをご覧いただき、<br class="president-break">誠にありがとうございます。</p>
-            <p>当社は、従業員とともに力を合わせ、<br class="president-break">互いに仲間意識を持ちながら、日々仕事に取り組んでおります。</p>
-            <p>会社を日々支えてくれる従業員を大切に思い、<br class="president-break">全員が安定した生活を送れるよう、<br class="president-break">社内体制をより一層整えていく所存です。</p>
-            <p>そして今の立ち位置に決して満足はせず、<br class="president-break">増員及び若手育成とともに事業拡大を目指し、<br class="president-break">これからも精進して参ります。</p>
-            <p>今後とも、弊社をよろしくお願い致します。</p>
+    <section class="about-message section-dark" id="president-message" aria-labelledby="about-message-title">
+      <div class="section-number" aria-hidden="true">02</div>
+      <div class="container">
+        <div class="about-message-inner">
+          <div class="about-section-heading reveal">
+            <p class="eyebrow">MESSAGE</p>
+            <h2 id="about-message-title">社長メッセージ</h2>
           </div>
-          <p class="president-name"><span>代表取締役</span><strong>西野 恭輔</strong></p>
+          <div class="about-message-copy reveal">
+            <p class="about-message-lead">夢を、自分だけの成功で<br>終わらせない。</p>
+            <p class="about-message-description">仲間への感謝と、これからの西野工業。<br>代表・西野恭輔が、会社の未来への想いを語ります。</p>
+            <p class="about-message-name"><span>代表</span>西野 恭輔</p>
+            <a class="button button-outline about-message-link" href="/messege">社長メッセージを読む<span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -114,7 +116,7 @@
         </div>
         <div class="company-table reveal">
           <dl>
-            <div><dt>会社名</dt><dd>西野工業</dd></div>
+            <div><dt>会社名</dt><dd>株式会社 西野工業</dd></div>
             <div><dt>代表者</dt><dd>西野 恭輔</dd></div>
             <div><dt>設立年</dt><dd>2023年</dd></div>
             <div><dt>事業内容</dt><dd>鉄筋工事一式</dd></div>
@@ -171,6 +173,6 @@
     </div>
     <div class="copyright"><span>© NISHINO KOGYO CO.INC</span><a href="/privacy">PRIVACY POLICY</a></div>
   </footer>
-  <script src="script.js?v=20260730-3"></script>
+  <script src="script.js?v=20261007-1"></script>
 </body>
 </html>
